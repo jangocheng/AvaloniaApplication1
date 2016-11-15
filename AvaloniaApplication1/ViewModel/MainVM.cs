@@ -86,7 +86,9 @@ namespace AvaloniaApplication1.ViewModel
 
         private void OpenToDoItemWindow(object obj)
         {
+            //Open Selected ToDoItem or Add New ToDoItem if not selected
             ToDoItem item = obj as ToDoItem ?? new ToDoItem();
+
             toDoWindow = new ToDoItemWindow();
             toDoWindow.DataContext = new ToDoItemVM(item, LoadToDoItems);
             toDoWindow.ShowDialog();

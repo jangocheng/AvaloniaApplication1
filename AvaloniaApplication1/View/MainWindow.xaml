@@ -1,10 +1,13 @@
-﻿<Window xmlns="https://github.com/avaloniaui" 
+﻿<Window xmlns="https://github.com/avaloniaui"
         Width="300" Height="200">
-    <StackPanel>
-        <ListBox Margin="5" Items="{Binding ToDoItems}" SelectedItem="{Binding SelectedToDoItem}">
-        </ListBox>
-        <Button Margin="5 0" Content="Open Selected ToDoItem" Command="{Binding OpenToDoItemWindowCommand}" CommandParameter="{Binding SelectedToDoItem}"/>
-        <Button Margin="5" Content="Add New ToDoItem" Command="{Binding AddToDoItemCommand}"/>
-        <Button Margin="5 0" Content="Delete Selected ToDoItem" Command="{Binding DeleteToDoItemCommand}" CommandParameter="{Binding SelectedToDoItem}"/>
-    </StackPanel>
+  <StackPanel>
+    <ListBox Margin="5" Items="{Binding ToDoItems}" SelectedItem="{Binding SelectedToDoItem}">
+    </ListBox>
+    
+    <!--Open Selected ToDoItem or Add New ToDoItem if not selected-->
+    <Button Margin="5 0" Content="Open Selected ToDoItem" Command="{Binding OpenToDoItemWindowCommand}" CommandParameter="{Binding SelectedToDoItem}"/>
+    
+    <Button Margin="5" Content="Add New ToDoItem" Command="{Binding AddToDoItemCommand}"/>
+    <Button Margin="5 0" Content="Delete Selected ToDoItem" Command="{Binding DeleteToDoItemCommand}" CommandParameter="{Binding SelectedToDoItem}"/>
+  </StackPanel>
 </Window>
