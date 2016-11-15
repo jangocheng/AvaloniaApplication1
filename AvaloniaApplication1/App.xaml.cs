@@ -24,7 +24,7 @@ namespace AvaloniaApplication1
             AppBuilder.Configure<App>()
                 .UseWin32()
                 .UseDirect2D1()
-                .Start<MainWindow>();
+                .Start<View.MainWindow>();
         }
 
         public static void AttachDevTools(Window window)

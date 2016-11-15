@@ -1,0 +1,10 @@
+﻿<Window xmlns="https://github.com/avaloniaui" Width="300" Height="200">
+  <StackPanel>
+    <TextBlock Margin="5" Text="{Binding ToDoItem.DateTime}"></TextBlock>
+    <TextBox Margin="5 0" TextWrapping="Wrap"
+             AcceptsReturn="True"
+             Text="{Binding ToDoItem.ToDoText}"></TextBox>
+    <Button Margin="5" Content="Save" Command="{Binding SaveToDoItemCommand}"/>
+
+  </StackPanel>
+</Window>

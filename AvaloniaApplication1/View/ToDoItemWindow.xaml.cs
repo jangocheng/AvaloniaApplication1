@@ -1,11 +1,11 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaApplication1
+namespace AvaloniaApplication1.View
 {
-    public class MainWindow : Window
+    public class ToDoItemWindow : Window
     {
-        public MainWindow()
+        public ToDoItemWindow()
         {
             this.InitializeComponent();
             App.AttachDevTools(this);

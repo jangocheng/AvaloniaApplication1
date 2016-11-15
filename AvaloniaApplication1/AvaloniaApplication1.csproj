@@ -169,18 +169,31 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\Command.cs" />
+    <Compile Include="ViewModel\ToDoItemVM.cs" />
+    <Compile Include="View\ToDoItemWindow.xaml.cs">
+      <DependentUpon>ToDoItemWindow.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="App.xaml" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MainWindow.xaml" />
-    <Compile Include="MainWindow.xaml.cs">
+    <EmbeddedResource Include="View\MainWindow.xaml" />
+    <Compile Include="Model\DataService.cs" />
+    <Compile Include="ViewModel\MainVM.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\ToDoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\ToDoItemWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
