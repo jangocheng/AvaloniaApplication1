@@ -26,12 +26,12 @@ namespace AvaloniaApplication1.Model
                        "ToDoItem",
                        new XAttribute("Guid", "F9168C5E-CEB2-4faa-B6BF-329BF39FA1E4"),
                        new XAttribute("DateTime", "2016-11-15T10:04:24.3452774+02:00"),
-                       "Я не стал разбираться с проблемой блокировки ввода символов в TextBox. Чтобы проверить обновление, можно удалить пару символов (BackSpace работает)."));
+                       "ToDo Test 1 ToDo Test 1 ToDo Test 1 ToDo Test 1 ToDo Test 1"));
                 xDoc.Element("ToDoItems").Add(new XElement(
                        "ToDoItem",
                        new XAttribute("Guid", "e48a096c-cc3a-470a-8d08-06500188c487"),
                        new XAttribute("DateTime", "2016-11-16T12:44:14.3452774+02:00"),
-                       "Строк кода немного, - комментарии не писал"));
+                       "ToDo Test 2 ToDo Test 2 ToDo Test 2 ToDo Test 2 ToDo Test 2"));
                 xDoc.Save(dataPath);
             }
         }

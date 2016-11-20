@@ -63,7 +63,6 @@ namespace AvaloniaApplication1.ViewModel
                 ToDoItems = toDoItems;
             });
             toDoWindow?.Close();
-            toDoWindow = null;
         }
 
         private Command _openToDoItemWindowCommand;
@@ -86,12 +85,18 @@ namespace AvaloniaApplication1.ViewModel
 
         private void OpenToDoItemWindow(object obj)
         {
+            if (toDoWindow != null)
+            {
+                toDoWindow.Activate();
+                return;
+            }
             //Open Selected ToDoItem or Add New ToDoItem if not selected
             ToDoItem item = obj as ToDoItem ?? new ToDoItem();
 
             toDoWindow = new ToDoItemWindow();
+            toDoWindow.Closed += (o, e) => toDoWindow = null;
             toDoWindow.DataContext = new ToDoItemVM(item, LoadToDoItems);
-            toDoWindow.ShowDialog();
+            toDoWindow.Show();
         }
 
         private Command _deleteToDoItemCommand;
@@ -105,6 +110,12 @@ namespace AvaloniaApplication1.ViewModel
 
         private void DeleteToDoItem(object obj)
         {
+            if (toDoWindow != null)
+            {
+                toDoWindow.Activate();
+                return;
+            }
+
             DataService.DeleteToDoItem((error) =>
             {
                 if (error != null)
